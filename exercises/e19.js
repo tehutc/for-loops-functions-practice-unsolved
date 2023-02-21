@@ -5,13 +5,16 @@
 // NOTE: You can NOT use the array.reverse() method in your code
 
 export function reverseArray(array) {
-  // Your code goes here...
-
+  let reverseArray = [];
+  for(let i = array.length - 1; i >= 0; i--){
+    reverseArray.push(array[i]);
+  }
+  return reverseArray;
 }
 
 
 
 // === TEST YOURSELF ===
-// Once you're finished run the test with "npm run test-19"
+// Once you're finished run the test with "s"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function

@@ -4,7 +4,22 @@
 // getClientWithLeastBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
 export function getClientWithLeastBalance(array) {
-  // Your code goes here...
+  let leastBalance = array[0].balance;
+  let clientWithLeastBalance = [];
+  
+  for (let i = 1; i < array.length; i++) {
+    if (array[i].balance < leastBalance && array[i].balance != 0) {
+      leastBalance = array[i].balance;
+    }
+  }
+  
+  for (let j = 0; j < array.length; j++) {
+   if (array[j].balance === leastBalance) {
+    clientWithLeastBalance.push(array[j]);
+    }
+  }
+  
+  return clientWithLeastBalance;
 
 }
 
