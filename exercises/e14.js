@@ -8,22 +8,24 @@
 export function getClientsWithWrongBalance(array) {
   let clientsWithWrongBalance = [];
   for (let i = 0; i < array.length; i++) {
-    if (array[i].deposits && array[i].withdrawals) { 
       let depositSum = 0;
       let withdrawalSum = 0;
-
+      if ( array[i].deposits ) {
       for (let j = 0; j < array[i].deposits.length; j++) {
         depositSum += array[i].deposits[j];
+        }
       }
 
+      if (array[i].withdrawals) {
       for (let j = 0; j < array[i].withdrawals.length; j++) {
         withdrawalSum += array[i].withdrawals[j];
+        }
       }
 
       if (depositSum - withdrawalSum !== array[i].balance) {
         clientsWithWrongBalance.push(array[i]);
       }
-    }
+  
   }
 
   return clientsWithWrongBalance;

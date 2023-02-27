@@ -5,14 +5,19 @@
 
 export function getClientsWithLetterInName(array, letter) {
   let matchingClients = [];
+  let lowerLetter = letter.toLowerCase();
   for (let i = 0; i < array.length; i++) {
-    if (array[i].name.toLowerCase().includes(letter.toLowerCase())) {
-    matchingClients.push(array[i].name);
+    let name = array[i].name.toLowerCase();
+    for (let j = 0; j < name.length; j++) {
+      if (name.charAt(j) === lowerLetter) {
+        matchingClients.push(array[i].name);
+        break;
+      }
     }
   }
   return matchingClients;
-
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

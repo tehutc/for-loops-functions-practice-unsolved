@@ -5,22 +5,16 @@
 // getClientWithGreatestBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
 export function getClientWithGreatestBalance(array) {
-  let greatestBalance = array[0].balance;
-  let clientWithGreatestBalance = [];
+  let greatestBalance = array[0];
   
   for (let i = 1; i < array.length; i++) {
-    if (array[i].balance > greatestBalance) {
-      greatestBalance = array[i].balance;
+    if (array[i].balance > greatestBalance.balance) {
+      greatestBalance = array[i];
     }
   }
   
-  for (let j = 0; j < array.length; j++) {
-   if (array[j].balance === greatestBalance) {
-    clientWithGreatestBalance.push(array[j]);
-    }
-  }
   
-  return clientWithGreatestBalance;
+  return [greatestBalance];
 
 }
 
